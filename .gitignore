@@ -42,3 +42,18 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+### Angular ###
+## Angular ##
+# compiled output
+/dist
+/tmp
+/app/**/*.js
+/app/**/*.js.map
+
+# dependencies
+/node_modules
+/bower_components
+
+
+
