@@ -7,7 +7,7 @@ import { HeroService } from '../hero.service';
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
-  
+
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
@@ -17,10 +17,10 @@ export class HeroesComponent implements OnInit {
   ngOnInit() {
     this.getHeroes();
   }
-  
+
   getHeroes(): void {
     this.heroService.getHeroes()
-        .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => this.heroes = heroes);
   }
 
   add(name: string): void {
@@ -32,4 +32,8 @@ export class HeroesComponent implements OnInit {
       });
   }
 
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero).subscribe();
+  }
 }
